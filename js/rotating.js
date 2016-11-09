@@ -12,12 +12,19 @@ var adThree = '<center><a href="http://yourlink.com" target="_blank"><img src="/
 (function insertRandomAd(){
     var x = Math.random() * 2 ;
     if( x >= 1.34){
-        document.getElementById("adHold").innerHTML += adOne
+        document.getElementById("adHold").innerHTML += adOne;
     }
     if (x >= .66 && x <= 1.33){
-        document.getElementById("adHold").innerHTML += adTwo
+        document.getElementById("adHold").innerHTML += adTwo;
     }
     if(x <= .65){
-        document.getElementById("adHold").innerHTML += adThree
+    	// if one company had two ads it wanted to randomize its spot between
+    	var y = Math.random();
+    	if (y >= .5){
+        document.getElementById("adHold").innerHTML += adThree;
+        }
+        else {
+        document.getElementById("adHold").innerHTML += adFour;
+        }
     }
 })()
